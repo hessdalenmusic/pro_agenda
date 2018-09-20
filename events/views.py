@@ -1,10 +1,10 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import Event, Comment
+from .models import Event, Comments
 from django.utils.timezone import localdate
 from django.core.paginator import Paginator, InvalidPage
 from django.http import HttpResponse
 from django.views.defaults import bad_request, server_error
-from datatime import datatime, timedelta
+from datetime import datetime, timedelta
 
 ITEMS_PER_PAGE = 5
 
