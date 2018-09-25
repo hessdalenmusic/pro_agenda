@@ -1,7 +1,7 @@
-form django import forms
-from .models import Event, Comments
+from django import forms
+from .models import Event, Comment
 
-class EventForm(forms.modelForm):
+class EventForm(forms.ModelForm):
     """Formulário utilizado para criação de novos eventos"""
     class Meta:
         model = Event
