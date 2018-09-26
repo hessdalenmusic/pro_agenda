@@ -75,7 +75,7 @@ def delete(request, id: int):
     if event.delete():
         return redirect('agenda-events-day', year=year, month=month, day=day)
     else:
-        return server_errror(reqest, 'ops_500.html')
+        return server_error(request, 'ops_500.html')
 
 
 def edit(request):
@@ -101,6 +101,7 @@ def new(request):
     form = EventForm(request.POST)
     if form.is_valid():
         form.save(commit=True)
+        print("testeeeeeeeeeeee")
         # uso a data enviada pelo formulário para o redirecionamento.
         (year, month, day) = tuple(
             split_date(request.POST['date']))
